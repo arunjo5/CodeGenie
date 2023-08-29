@@ -1,0 +1,23 @@
+{% load static %}
+<div class="topics">
+    <div class="topics__header">
+      <h2>Browse Languages</h2>
+    </div>
+    <ul class="topics__list">
+      <li>
+        <a href="{% url 'home' %}" class="active">Total Languages <span>{{languages.count}}</span></a>
+      </li>
+      {% for language in languages %}
+      <li>
+        <a href="{% url 'home' %}?q={{language.name|urlencode}}"><img src ="{% static 'images/' %}{{language.name|urlencode|lower}}.svg" style="width: 32px; height:32 px;">{{language}} <span>{{language.snippet_set.count}}</span></a>
+      </li>
+      {% endfor %}
+    </ul>
+    <!-- <a class="btn btn--link" href="languages.html">
+      More
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <title>chevron-down</title>
+        <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
+      </svg>
+    </a> -->
+  </div>

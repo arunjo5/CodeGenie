@@ -1,0 +1,16 @@
+<div class="activities">
+
+    <div class="activities__header">
+        <h2>Ask Me Anything!</h2>
+    </div>
+    <div class="activities__box">
+    {{final_answer}}
+    </div>
+    <div class="activities__box">
+
+        <form class="header__search" method="GET" action="{% url 'home' %}">
+            <input name="res" placeholder="Ask Your Question here!." />
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px 80px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: #fff; */
+    background: rgb(18, 17, 17);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+}
+
+.logt{
+    position: relative;
+    display: flex;
+    list-style: none;
+    /* display: inline-block; */
+    color: #b2bdbd;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul li a{
+    display: inline-block;
+    color: #b2bdbd;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h2{
+    color: #b2bdbd;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span{
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.content .textBox p{
+    margin-top: 1em;
+    color: #b2bdbd;
+}
+
+.content .textBox p span{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: rgb(219, 209, 209);
+    color: #333;
+    border-radius: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.content .imgBox{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.content .imgBox img{
+    max-width: 330px;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(219, 209, 209);
+    clip-path: circle(600px at right 800px);
+
+}

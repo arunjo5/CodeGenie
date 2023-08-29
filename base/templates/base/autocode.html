@@ -1,0 +1,124 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <!-- other content of the head element goes here -->
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/base16/atelier-estuary.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<style>
+    pre,
+    code {
+        font-family: monospace, monospace;
+    }
+
+    pre {
+        overflow: auto;
+    }
+
+    pre>code {
+        display: block;
+        padding: 1rem;
+        word-wrap: normal;
+    }
+</style>
+
+
+<main class="profile-page layout layout--2">
+    <div class="container">
+        <!-- Room Start -->
+        <div class="room">
+            <div class="room__top">
+                <div class="room__topLeft">
+                    <a href="{% url 'index' %}">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>arrow-left</title>
+                            <path
+                                d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                            </path>
+                        </svg>
+                    </a>
+                    <h3>AUTO CODE</h3>
+                </div>
+
+                <div class="room__topRight">
+
+
+                </div>
+
+            </div>
+            <div class="room__box scroll">
+                <div class="">
+                    <br><br>
+                    <form class="header__search" method="GET" action="{% url 'auto-code' %}">
+                        <label>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">
+                                <title>autocode</title>
+                                <path
+                                    d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z">
+                                </path>
+                            </svg>
+                            <input name="p" placeholder="Write your prompt to generate code!" />
+                        </label>
+                    </form>
+                    <div class="room__info">
+                        <h3></h3>
+                        <span></span>
+                    </div>
+                    <div class="room__hosted">
+                        <p></p>
+                        <a href="" class="room__author">
+                        </a>
+                    </div>
+                    <div class="room__details" style="overflow-y: scroll; height: 420px;">
+                        {% if p == '' %}
+                         ...
+                         {% else %}
+                        <pre><code>{{final_answer}}</code></pre>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Room End -->
+
+        <!--   Start -->
+        <div class="participants">
+            <!-- <h3 class="participants__top">Comments</h3>
+            <div class="participants__list scroll">
+            {% for comment in snippet_comments %}
+            <div class="thread">
+                <div class="thread__top">
+                    <div class="thread__author">
+                        <a href="" class="thread__authorInfo">
+                            <div class="avatar avatar--small">
+                                <img src="{% static 'images/avatar.svg' %}" />
+                            </div>
+                            <span>@{{comment.user.username}}</span>
+                        </a> -->
+            <!-- <span class="thread__date">{{comment.created|timesince}} ago</span> -->
+            <!-- </div>
+                </div>
+                <div class="thread__details">
+                   <b>{{comment.body}}</b> 
+                </div>
+            </div>
+            {% endfor %}
+
+                <div class="room__message">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <input name="body" placeholder="Write your comment here..." />
+                    </form>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</main>
+{% endblock content%}
